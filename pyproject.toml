@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "leetcode-analog"
+name = "codecomp"
 version = "0.1.0"
 description = ""
 authors = ["Forder <lohhhti@gmail.com>"]
