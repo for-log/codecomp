@@ -1,1 +1,1 @@
-from leetcode_analog.worker import app
+from codecomp.worker import app

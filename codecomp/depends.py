@@ -8,7 +8,7 @@ import redis.asyncio as redis
 from sqlalchemy.orm import declarative_base
 
 from os import environ
-from leetcode_analog.helper import decode_token
+from codecomp.helper import decode_token
 
 
 engine = create_async_engine(

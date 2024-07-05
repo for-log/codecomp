@@ -1,9 +1,9 @@
 from jose import JWTError
 from pydantic import BaseModel
 from sqlalchemy import select
-from leetcode_analog.helper import check_password, hash_password, generate_token, Token
-from leetcode_analog.error import ErrorResult, ErrorCode
-from leetcode_analog.user import User
+from codecomp.helper import check_password, hash_password, generate_token, Token
+from codecomp.error import ErrorResult, ErrorCode
+from codecomp.user import User
 import redis.asyncio as redis
 from sqlalchemy.ext.asyncio import AsyncSession
 from time import time

@@ -2,12 +2,12 @@ from json import loads
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from leetcode_analog.worker_result_register import router as queue_router
-from leetcode_analog.worker import Incoming as Input
+from codecomp.worker_result_register import router as queue_router
+from codecomp.worker import Incoming as Input
 from . import repository as resolve_repository
-from leetcode_analog.task import repository as task_repository
-from leetcode_analog.depends import auth_middleware, get_db
-from leetcode_analog.helper import Token, generate_filename
+from codecomp.task import repository as task_repository
+from codecomp.depends import auth_middleware, get_db
+from codecomp.helper import Token, generate_filename
 from uuid import uuid4
 
 router = APIRouter(prefix="/resolves", tags=["resolves"])

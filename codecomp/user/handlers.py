@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends
 import redis.asyncio as redis
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from leetcode_analog.depends import get_db, get_redis
-from leetcode_analog.error import ErrorResult
-from leetcode_analog.user.repository import UserAddDTO, UserDTO, create_user, login_user as rep_login_user
+from codecomp.depends import get_db, get_redis
+from codecomp.error import ErrorResult
+from codecomp.user.repository import UserAddDTO, UserDTO, create_user, login_user as rep_login_user
 
 router = APIRouter(prefix="/users", tags=["users"])
 

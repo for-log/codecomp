@@ -9,8 +9,8 @@ from asyncio.subprocess import PIPE
 import psutil
 from typing import Generator, Any
 
-from leetcode_analog.enviroment_generators import python_generate
-from leetcode_analog.helper import generate_filename
+from codecomp.enviroment_generators import python_generate
+from codecomp.helper import generate_filename
 
 
 class Incoming(BaseModel):

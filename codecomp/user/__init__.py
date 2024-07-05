@@ -5,7 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
 from uuid import UUID
 
-from leetcode_analog.depends import Base
+from codecomp.depends import Base
 
 
 class User(Base):

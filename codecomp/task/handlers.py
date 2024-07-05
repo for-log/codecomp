@@ -2,9 +2,9 @@ from json import loads
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from leetcode_analog.depends import auth_middleware, get_db
-from leetcode_analog.helper import Token
-from leetcode_analog.task.repository import (
+from codecomp.depends import auth_middleware, get_db
+from codecomp.helper import Token
+from codecomp.task.repository import (
     TaskAddDTO,
     TaskDTO,
     TaskTestAddDTO,

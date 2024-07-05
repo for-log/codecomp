@@ -5,7 +5,7 @@ import datetime
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from leetcode_analog.helper import generate_filename
+from codecomp.helper import generate_filename
 from . import TaskResolve
 
 

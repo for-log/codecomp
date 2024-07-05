@@ -4,7 +4,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
 
-from leetcode_analog.depends import Base
+from codecomp.depends import Base
 
 
 class Task(Base):
