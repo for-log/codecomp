@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "leetcode-analog"
+version = "0.1.0"
+description = ""
+authors = ["Forder <lohhhti@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.111.0"
+sqlalchemy = { extras = ["asyncio"], version = "^2.0.31" }
+asyncpg = "^0.29.0"
+python-jose = "^3.3.0"
+redis = "^5.0.6"
+bcrypt = "^4.1.3"
+faststream = { extras = ["rabbit"], version = "^0.5.13" }
+psutil = "^6.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

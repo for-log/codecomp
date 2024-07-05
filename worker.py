@@ -1,0 +1,1 @@
+from leetcode_analog.worker import app
