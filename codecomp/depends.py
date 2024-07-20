@@ -10,7 +10,6 @@ from sqlalchemy.orm import declarative_base
 from os import environ
 from codecomp.helper import decode_token
 
-
 engine = create_async_engine(
     environ.get("POSTGRES_URL"), echo=True
 )

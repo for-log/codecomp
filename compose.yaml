@@ -1,0 +1,60 @@
+services:
+  web:
+    build:
+      dockerfile: ./server.Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - rabbit_instance
+      - redis_instance
+      - postgres_instance
+    links:
+      - rabbit_instance
+    restart: on-failure
+    networks:
+      - shared-network
+    environment:
+      - REDIS_URL=redis://redis_instance:6379
+      - POSTGRES_URL=postgresql+asyncpg://postgres:postgres@postgres_instance:5432/postgres
+      - RABBIT_URL=amqp://guest:guest@rabbit_instance:5672/
+  workers:
+    build:
+      dockerfile: ./worker.Dockerfile
+    depends_on:
+      - redis_instance
+      - rabbit_instance
+      - postgres_instance
+    environment:
+      - REDIS_URL=redis://redis_instance:6379
+      - POSTGRES_URL=postgresql+asyncpg://postgres:postgres@postgres_instance:5432/postgres
+      - RABBIT_URL=amqp://guest:guest@rabbit_instance:5672/
+    networks:
+      - shared-network
+  rabbit_instance:
+    image: "rabbitmq:alpine"
+    networks:
+      - shared-network
+    ports:
+      - 5672:5672
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:15672" ]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+  postgres_instance:
+    image: "postgres:alpine"
+    networks:
+      - shared-network
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+  redis_instance:
+    image: "redis:alpine"
+    networks:
+      - shared-network
+    ports:
+      - 6379:6379
+networks:
+  shared-network:
+    driver: bridge

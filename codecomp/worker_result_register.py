@@ -5,13 +5,9 @@ from os import environ
 
 from codecomp.depends import get_db
 from codecomp.resolve import TaskResolve
-from codecomp.worker import Outgoing as Incoming
+from queue_messages import *
 
-# STOP_CAUSE:
-#     timeout
-#     error
-#     memory
-
+print(environ.get("RABBIT_URL"))
 router = RabbitRouter(environ.get("RABBIT_URL"))
 
 

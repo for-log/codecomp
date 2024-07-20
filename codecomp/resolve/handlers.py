@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from codecomp.worker_result_register import router as queue_router
-from codecomp.worker import Incoming as Input
+from queue_messages import Incoming as Input
 from . import repository as resolve_repository
 from codecomp.task import repository as task_repository
 from codecomp.depends import auth_middleware, get_db

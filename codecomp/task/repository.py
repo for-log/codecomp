@@ -32,6 +32,7 @@ async def create_task(
 
 
 async def get_tasks(offset: int, count: int, db: AsyncSession) -> list[TaskDTO]:
+    # TODO: Это медленно на большом количестве задач, но пока нет идеи как сделать лучше
     tasks_orm = await db.scalars(select(Task).offset(offset).limit(count))
     return [TaskDTO.model_validate(task, from_attributes=True) for task in tasks_orm]
 

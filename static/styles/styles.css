@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'MainFont';
+    src: local('MainFont'), url(/static/fonts/SpaceMono-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --header-height: 6vh;
+    --primary-color: #0e0e17;
+    --border-color: #343434;
+    --secondary-color: #00ffbf;
+    --text-color: white;
+    font-family: 'MainFont', monospace;
+}
+
+body {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary-color);
+}
+
+content {
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.editor-container {
+    width: 50%;
+    height: calc(100% - var(--header-height));
+}
+
+.task-description-container {
+    width: 50%;
+    height: calc(100% - var(--header-height));
+}
+
+.hint {
+    color: white;
+    opacity: 0.4;
+}
